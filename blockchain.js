@@ -20,3 +20,5 @@ class Blockchain {
         this.chain.push(newBlock)
     }
 }
+
+module.exports = Blockchain

@@ -10,7 +10,9 @@ class Block{
         this.hash = this.calculateHash()
     }
 
-    calculateHash = () => {
+    calculateHash(){
         return SHA256(this.index + this.timeStamp + this.previousHash + JSON.stringify(this.data)).toString
     }
 }
+
+module.exports = Block
