@@ -12,5 +12,7 @@ let block2 = new Block(2, '11/14/19', {balance : 680})
 myBlockChain.addBlock(block1)
 myBlockChain.addBlock(block2)
 
-//output for validation//
+//output of current blockchain//
 console.log(JSON.stringify(myBlockChain, null, 4))
+//for validity of the blockchain//
+console.log(`The validity of blockchain  :  ${myBlockChain.verifyBlockchain()}`)

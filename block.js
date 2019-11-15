@@ -11,7 +11,7 @@ class Block{
     }
 
     calculateHash(){
-        return SHA256(this.index + this.timeStamp + this.previousHash + JSON.stringify(this.data)).toString
+        return SHA256(this.index + this.timeStamp + this.previousHash + JSON.stringify(this.data)).toString()
     }
 }
 
