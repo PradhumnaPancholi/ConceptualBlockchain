@@ -5,22 +5,34 @@ class Blockchain {
     constructor(){
         this.chain = [this.generateGenesisBlock()]
         this.difficulty = 5
+        this.pendingTransactions = []
+        this.miningReward = 5
     }
 
     generateGenesisBlock(){
-        return new Block(0, '07/11/2019', "This is the genesis block", "0")
+        return new Block ('07/11/2019', "This is the genesis block", "0")
     }
 
     getLatestBlock(){
         return this.chain[this.chain.length - 1]
     }
 
-    addBlock(newBlock){
-        newBlock.previousHash = this.getLatestBlock().hash
-        // newBlock.hash = newBlock.calculateHash()
-        newBlock.hash = newBlock.mineNewBlock(this.difficulty)
-        this.chain.push(newBlock)
+    //for pending transactions
+    minePendingTransaction(miningRewardAddress){
+        //mining the block
+        let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash)
+        block.mineNewBlock(this.difficulty)
+        console.log('Success: Block Mined')
+
+        //adding to blockchain//
+        this.chain.push(block)
     }
+    // addBlock(newBlock){
+    //     newBlock.previousHash = this.getLatestBlock().hash
+    //     // newBlock.hash = newBlock.calculateHash()
+    //     newBlock.hash = newBlock.mineNewBlock(this.difficulty)
+    //     this.chain.push(newBlock)
+    // }
 
     verifyBlockchain(){
         //loop throught the blockchain//
