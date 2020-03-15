@@ -5,8 +5,8 @@ const BlockChain = require('./blockchain')
 let myBlockChain = new BlockChain()
 
 //create new new blocks//
-let block1 = new Block(1, '11/14/19', {balance : 100})
-let block2 = new Block(2, '11/14/19', {balance : 680})
+let block1 = new Block(1, '11/14/19')
+let block2 = new Block(2, '11/14/19')
 
 //add blocks to blockchain//
 console.log('First block in creation')
