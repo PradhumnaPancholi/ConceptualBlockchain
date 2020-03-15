@@ -27,12 +27,12 @@ class Blockchain {
         //adding to blockchain//
         this.chain.push(block)
     }
-    // addBlock(newBlock){
-    //     newBlock.previousHash = this.getLatestBlock().hash
-    //     // newBlock.hash = newBlock.calculateHash()
-    //     newBlock.hash = newBlock.mineNewBlock(this.difficulty)
-    //     this.chain.push(newBlock)
-    // }
+    addBlock(newBlock){
+        newBlock.previousHash = this.getLatestBlock().hash
+        // newBlock.hash = newBlock.calculateHash()
+        newBlock.hash = newBlock.mineNewBlock(this.difficulty)
+        this.chain.push(newBlock)
+    }
 
     verifyBlockchain(){
         //loop throught the blockchain//
