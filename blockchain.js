@@ -17,16 +17,16 @@ class Blockchain {
         return this.chain[this.chain.length - 1]
     }
 
-    //for pending transactions
-    minePendingTransaction(miningRewardAddress){
-        //mining the block
-        let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash)
-        block.mineNewBlock(this.difficulty)
-        console.log('Success: Block Mined')
+    // //for pending transactions
+    // minePendingTransaction(miningRewardAddress){
+    //     //mining the block
+    //     let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash)
+    //     block.mineNewBlock(this.difficulty)
+    //     console.log('Success: Block Mined')
 
-        //adding to blockchain//
-        this.chain.push(block)
-    }
+    //     //adding to blockchain//
+    //     this.chain.push(block)
+    // }
     addBlock(newBlock){
         newBlock.previousHash = this.getLatestBlock().hash
         // newBlock.hash = newBlock.calculateHash()
