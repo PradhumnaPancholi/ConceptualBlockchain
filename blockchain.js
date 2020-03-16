@@ -8,7 +8,7 @@ class Blockchain {
 
     generateGenesisBlock(){
         console.log('Generating genesis block')
-        return new Block ('07/11/2019', "This is the genesis block", "0")
+        return new Block (Date.now(),"This is the genesis block", "0")
     }
 
     getLatestBlock(){
